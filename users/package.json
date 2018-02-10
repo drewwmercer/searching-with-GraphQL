@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "json:server": "json-server --watch db.json",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "all": "concurrently --kill-others-on-fail \"npm run json:server\" \"npm run server\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
+    "concurrently": "^3.5.1",
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
     "graphql": "^0.12.3",
